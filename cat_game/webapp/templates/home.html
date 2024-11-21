@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat Game</title>
+</head>
+<body>
+    <h1>Welcome to Cat Game!</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Enter cat's name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Start</button>
+    </form>
+</body>
+</html>

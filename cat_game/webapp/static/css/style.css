@@ -1,0 +1,20 @@
+.cat-avatar {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+.happy {
+    background-image: url("../images/cat_happy.jpg");
+}
+
+.neutral {
+    background-image: url("../images/cat_neutral.jpg");
+}
+
+.sad {
+    background-image: url("../images/cat_sad.jpeg");
+}

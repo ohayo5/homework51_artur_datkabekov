@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cat Info</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
+</head>
+<body>
+    <h1>Cat Info</h1>
+    <div class="cat-avatar {% if cat.happiness >= 70 %}happy{% elif cat.happiness >= 30 %}neutral{% else %}sad{% endif %}"></div>
+    <p><strong>Name:</strong> {{ cat.name }}</p>
+    <p><strong>Age:</strong> {{ cat.age }}</p>
+    <p><strong>Hunger:</strong> {{ cat.hunger }}</p>
+    <p><strong>Happiness:</strong> {{ cat.happiness }}</p>
+    <p><strong>Status:</strong> {{ "Sleeping" if cat.sleeping else "Awake" }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="action">Choose action:</label>
+        <select id="action" name="action">
+            <option value="feed">Feed</option>
+            <option value="play">Play</option>
+            <option value="sleep">Sleep</option>
+        </select>
+        <button type="submit">Apply</button>
+    </form>
+</body>
+</html>
